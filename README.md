@@ -21,12 +21,11 @@ Applicable for downloading *.ts video files from websites.
 2. Pass the website url as the 1st and only cmd line args `https://website-with-video.com`
 
 ### Command Line Maven:
-1. `mvn clean compile`
-2. `mvn exec:java -Dexec.mainClass="com.video.downloader.MainVideoDownloader" -Dexec.args="https://website-with-video.com"`
+1. `mvn clean compile exec: -Dexec.mainClass="com.video.downloader.MainVideoDownloader" -Dexec.args="https://website-with-video.com"`
 
 ### EXAMPLE USAGE
 * To Download video from _https://www.nbcnews.com/nightly-news/video/russian-military-harassing-u-s-civilian-fishing-boats-near-alaska-exclusive-110692933767_
-* Run `mvn exec:java -Dexec.mainClass="com.video.downloader.MainVideoDownloader" -Dexec.args="https://www.nbcnews.com/nightly-news/video/russian-military-harassing-u-s-civilian-fishing-boats-near-alaska-exclusive-110692933767"`
+* Run `mvn clean compile exec:java -Dexec.mainClass="com.video.downloader.MainVideoDownloader" -Dexec.args="https://www.nbcnews.com/nightly-news/video/russian-military-harassing-u-s-civilian-fishing-boats-near-alaska-exclusive-110692933767"`
 * Final output video should appear under `/<_your-system_>/java-video-downloader-util/VideoOutputDirectory/Full_Video.ts`
 
 ## Utility Execution steps
