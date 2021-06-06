@@ -2,7 +2,9 @@ package com.video.downloader;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 
 // Example ts video: https://www.nbcnews.com/nightly-news/video/russian-military-harassing-u-s-civilian-fishing-boats-near-alaska-exclusive-110692933767
@@ -13,6 +15,10 @@ public class MainVideoDownloader {
         VideoDownloaderUtil videoDownloaderUtil = new VideoDownloaderUtil();
 
         System.out.println("\n===================== Video Downloader Started =====================");
+        if(!cleanUpVideoOutputDirectory()) {
+            System.err.println("Failed to clean up files in VideoOutputDirectory");
+            return;
+        }
 
         String directM3U8fileURL;
 
@@ -27,7 +33,7 @@ public class MainVideoDownloader {
             return;
         }
 
-        System.out.println("Website args --> " + args[0]);
+        System.out.println("\nWebsite args --> " + args[0]);
 
         // Direct m3u8 file was provided
         if (args[0].contains(".m3u8")) {
@@ -83,6 +89,25 @@ public class MainVideoDownloader {
 
         System.out.println("TOTAL FILES DOWNLOADED: " + VideoDownloaderUtil.totalDownloadCounter.get());
         System.out.println("\n================== Video downloader concluded ==================");
+    }
+
+    // Delete ts video files as they will end up being overwritten in <projectDirectory>/java-video-downloader-util/VideoOutputDirectory/.
+    public static boolean cleanUpVideoOutputDirectory() {
+        String downloadDirectory = Paths.get(".").toAbsolutePath().toUri().normalize().getRawPath() + "VideoOutputDirectory/";
+        File files = new File(downloadDirectory);
+        String[] fileNames = files.list();
+
+        for (String fileName : fileNames) {
+            if (fileName.endsWith(".ts")) {
+                System.out.println("Deleting file " + fileName);
+                File currentFile = new File(fileName);
+                if (currentFile.delete()) {
+                    System.out.println("Failed to delete file " + fileName);
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }
