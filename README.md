@@ -8,7 +8,7 @@ Applicable for downloading *.ts video files from websites.
 2. Maven --> https://maven.apache.org/install.html
 3. Install FFmpeg --> https://ffmpeg.org/download.html
    * How to install FFmpeg and add to system path --> https://www.wikihow.com/Install-FFmpeg-on-Windows
-   
+
 
 ## Usage:
 
