@@ -24,8 +24,8 @@ Applicable for downloading *.ts video files from websites.
 1. `mvn clean compile exec:java -Dexec.cleanupDaemonThreads=false -Dexec.mainClass="com.video.downloader.MainVideoDownloader" -Dexec.args="https://website-with-video.com"`
 
 ### EXAMPLE USAGE
-* To Download video from _https://www.nbcnews.com/nightly-news/video/russian-military-harassing-u-s-civilian-fishing-boats-near-alaska-exclusive-110692933767_
-* Run `mvn clean compile exec:java -Dexec.cleanupDaemonThreads=false -Dexec.mainClass="com.video.downloader.MainVideoDownloader" -Dexec.args="https://www.nbcnews.com/nightly-news/video/russian-military-harassing-u-s-civilian-fishing-boats-near-alaska-exclusive-110692933767"`
+* To Download video from _https://www.nbcnews.com/tech/tech-news/robinhood-reddit-timeline-two-apps-tormenting-wall-street-n1256080_
+* Run `mvn clean compile exec:java -Dexec.cleanupDaemonThreads=false -Dexec.mainClass="com.video.downloader.MainVideoDownloader" -Dexec.args="https://www.nbcnews.com/tech/tech-news/robinhood-reddit-timeline-two-apps-tormenting-wall-street-n1256080"`
 * Final output video should appear under `/<_your-system_>/java-video-downloader-util/VideoOutputDirectory/Full_Video.ts`
 
 ## Utility Execution steps
