@@ -99,9 +99,10 @@ public class MainVideoDownloader {
 
         for (String fileName : fileNames) {
             if (fileName.endsWith(".ts")) {
-                System.out.println("Deleting file " + fileName);
-                File currentFile = new File(fileName);
-                if (currentFile.delete()) {
+                String fullFileName =  downloadDirectory + fileName;
+                File currentFile = new File(fullFileName);
+                System.out.println("Deleting file " + currentFile.getAbsolutePath());
+                if (!currentFile.delete()) {
                     System.out.println("Failed to delete file " + fileName);
                     return false;
                 }
