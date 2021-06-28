@@ -2,6 +2,9 @@
 Transport Stream (TS) video downloader utility.
 Applicable for downloading *.ts video files from websites.
 
+## Detail Article
+https://jet-cabral.medium.com/java-ts-video-downloader-a0fcf23ab84a
+
 
 ## System Requirements
 1. Java version 8+ --> https://www.oracle.com/java/technologies/javase-downloads.html
